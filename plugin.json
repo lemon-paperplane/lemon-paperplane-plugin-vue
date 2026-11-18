@@ -1,0 +1,102 @@
+{
+  "id": "vue",
+  "name": "%plugin.name%",
+  "version": "0.1.0",
+  "vendor": "Lemon Paperplane",
+  "description": "%plugin.description%",
+  "icon": "icons/vue.svg",
+  "license": "MIT",
+  "category": "framework",
+  "engines": {
+    "paperplane": ">=0.1.0 <0.2.0"
+  },
+  "protocol": 1,
+  "executable": "bin/paperplane-plugin-vue",
+  "dependencies": [
+    {
+      "id": "nodejs"
+    }
+  ],
+  "activation": {
+    "facets": [
+      "nodejs"
+    ]
+  },
+  "contributes": {
+    "languages": [
+      {"id": "vue", "name": "Vue", "extensions": [".vue"], "module": "editor/lang-vue.js", "blockComment": ["<!--", "-->"]}
+    ],
+    "facets": [
+      {
+        "id": "vue",
+        "name": "Vue.js",
+        "icon": "icons/vue.svg",
+        "category": "framework",
+        "priority": 80
+      },
+      {
+        "id": "nuxt",
+        "name": "Nuxt",
+        "icon": "icons/nuxt.svg",
+        "category": "framework",
+        "priority": 85
+      }
+    ],
+    "diagnostics": [
+      {
+        "id": "vue.version-mismatch",
+        "hint": "Vue packages version mismatch",
+        "pattern": "Vue packages version mismatch",
+        "severity": "error",
+        "title": "%diag.vue.version-mismatch.title%",
+        "message": "%diag.vue.version-mismatch.message%",
+        "facets": [
+          "vue"
+        ],
+        "fixes": [
+          {
+            "id": "reinstall",
+            "title": "%fix.installDependencies%",
+            "kind": "installDependencies",
+            "recommended": true
+          }
+        ]
+      },
+      {
+        "id": "vue.preprocessor-missing",
+        "hint": "Preprocessor dependency",
+        "pattern": "Preprocessor dependency \\\"([^\\\"]+)\\\" not found",
+        "severity": "error",
+        "title": "%diag.vue.preprocessor-missing.title%",
+        "message": "%diag.vue.preprocessor-missing.message%",
+        "facets": [
+          "vue"
+        ],
+        "fixes": [
+          {
+            "id": "install",
+            "title": "%fix.installDependencies%",
+            "kind": "installDependencies",
+            "recommended": true
+          }
+        ]
+      }
+    ],
+    "readyPatterns": [
+      {
+        "hint": "App running at",
+        "pattern": "App running at:?",
+        "facets": [
+          "vue"
+        ]
+      },
+      {
+        "hint": "server built in",
+        "pattern": "Nitro server built in \\d",
+        "facets": [
+          "nuxt"
+        ]
+      }
+    ]
+  }
+}

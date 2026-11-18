@@ -1,0 +1,13 @@
+{
+  "plugin.name": "Vue.js",
+  "plugin.description": "Detects Vue, Vite, Vue CLI and Nuxt; keeps old Vue CLI projects running on new Node",
+  "problem.legacy.title": "OpenSSL legacy provider required",
+  "problem.legacy.message": "{0} is based on webpack 4 and fails with ERR_OSSL_EVP_UNSUPPORTED (0308010C) on Node {1}.",
+  "fix.opensslLegacy": "Enable OpenSSL legacy provider",
+  "fix.useNode16": "Use Node 16",
+  "fix.installDependencies": "Reinstall dependencies",
+  "diag.vue.version-mismatch.title": "Vue and template compiler versions differ",
+  "diag.vue.version-mismatch.message": "vue and vue-template-compiler (or @vue/compiler-sfc) must be the same version.",
+  "diag.vue.preprocessor-missing.title": "Style preprocessor {1} is missing",
+  "diag.vue.preprocessor-missing.message": "A component uses {1}, but it is not installed."
+}

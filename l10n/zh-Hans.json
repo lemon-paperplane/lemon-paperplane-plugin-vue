@@ -1,0 +1,13 @@
+{
+  "plugin.name": "Vue.js",
+  "plugin.description": "识别 Vue、Vite、Vue CLI 与 Nuxt，旧版 Vue CLI 在新 Node 上的兼容处理",
+  "problem.legacy.title": "需要 OpenSSL 旧版兼容",
+  "problem.legacy.message": "{0} 基于 webpack 4，在 Node {1} 上启动会报 ERR_OSSL_EVP_UNSUPPORTED（0308010C）。",
+  "fix.opensslLegacy": "启用 OpenSSL 旧版兼容",
+  "fix.useNode16": "使用 Node 16",
+  "fix.installDependencies": "重新安装依赖",
+  "diag.vue.version-mismatch.title": "Vue 与模板编译器版本不一致",
+  "diag.vue.version-mismatch.message": "vue 与 vue-template-compiler（或 @vue/compiler-sfc）必须是同一个版本。",
+  "diag.vue.preprocessor-missing.title": "缺少样式预处理器 {1}",
+  "diag.vue.preprocessor-missing.message": "组件里用到了 {1}，但依赖里没有安装它。"
+}
